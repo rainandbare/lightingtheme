@@ -1,0 +1,165 @@
+
+footer{
+	background: $white;
+	ul#menu-main-footer-menu{
+		padding: 10px 0;
+		li{
+			padding-right: 20px;
+			letter-spacing: 1px;
+			@include fontSize(14);
+		}
+	}
+	.madeWithLove{
+		text-transform: uppercase;
+		color: $accent;
+		letter-spacing: 1px;
+		align-items: center;
+		@include fontSize(12);
+		i{
+			padding: 0px 4px;
+		}
+
+	}
+	address, div.contact{
+		@include fontSize(9);
+		min-width: 89px;
+		font-style: normal;
+		padding: 0 5px 0 0;
+	}
+	address.longAddress{
+		min-width: 107px;
+	}
+	h6{
+		text-transform: uppercase;
+		color: $accent;
+		@include fontSize(9);
+	}
+	.footer-menu{
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+	.footer-utilities{
+		padding: 10px 0px 5px;
+		justify-content: space-between;
+		.HQLogo{
+			display: flex;
+			flex-flow: column nowrap;
+			justify-content: flex-end;
+			margin: 0 10px 0 0;
+			i{
+				color: $accent;
+			}
+		}
+	}
+	.footer-utilities-extras{
+		align-items: center;
+		& > *{
+			margin: 5px 5px 10px;
+
+		}
+		.catalogue-links button{
+			margin: 0 5px;
+		}
+		.newsletter{
+			margin: 0px 0 0 10px;
+			border: 1px solid $black;
+		}
+		.oneline-form{
+			border-color: $white;
+		}
+		
+		.oneline-form input.mainInput{
+			font-style: italic;
+			min-width: 189px;
+		}
+	} 
+	.social-menu{
+		display: flex;
+	}
+	.catalogue-links{
+		flex-flow: row nowrap;
+		align-items: center;
+	}
+	.midsized-footer{
+		display: none;
+	}
+	.HQLogo {
+		text-align: center;
+	}
+	.popup-window{
+		display: none;
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+    	padding: 70px;
+    	overflow-y: scroll;
+		background-color:RGBA(189, 189, 189, 0.7);
+		.popup-form{
+			background-color: white;
+			padding: 30px 40px;
+			max-width: 800px;
+			margin: 0 auto;	
+			position: relative;
+			border: 1px solid black;
+			h3{
+				text-align: center;
+			}
+			.popup-close{
+				position: absolute;
+				right: -11px;
+			    top: -11px;
+			    padding: 4px 6px 6px;
+			    width: 28px;
+				background-color: $black;
+				text-align: center;
+				outline: none;
+    			border: none;
+				border-radius: 50%;
+				i{
+					color: $white;
+				}
+			}
+			.wpcf7-form{
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				.contactItem{
+					width: calc(50% - 20px);
+					label{
+						display: none;
+					}
+					&:nth-child(14){
+						width: 100%;
+					}
+				}
+				p{	
+					padding-top: 20px;
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+.sub-footer{
+	ul{
+		justify-content: flex-end;
+	}
+	li{
+		@include fontSize(8);
+		padding: 0 0 5px 10px;
+		a{
+			color: $mediumGrey;
+			&:hover{
+				color: $grey;
+			}
+		}
+	}
+}
+
+
+
+

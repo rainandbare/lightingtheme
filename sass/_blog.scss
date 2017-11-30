@@ -1,0 +1,116 @@
+section.intro{
+	max-width: 1040px;
+    margin: 50px auto;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 16px;
+   
+
+}
+
+section.banner{
+	position: relative;
+	padding-bottom: 20px;
+	 h2 {
+	    background: rgba(255,255,255,0.60);
+	    color: #333333 !important;
+	    position: absolute;
+	    left: 50px;
+	    padding: 15px 10px;
+	    font-weight: 300 !important;
+	    font-size: 34px !important;
+	    top: calc(50% - 30px);
+	    text-transform: initial !important;
+	}
+}
+.other-blog-articles{
+	display: flex;
+	flex-flow: row wrap;
+}
+div.blog-image{
+	width: 100%;
+	height: 120px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.blog-article{
+	width: 25%;
+	position: relative;
+	padding: 20px;
+	h3{
+		@include fontSize(19);
+    	font-weight: 300 !important;
+    	line-height: 25px !important;
+    	text-transform: initial !important;
+    	text-align: center;
+    	margin-bottom: 21px;
+    	margin-top: 10px;
+	}
+	.designNotesLogo{
+		width: 20px;
+		margin: 20px auto;
+	}
+	h6{
+		color: $accent;
+		text-align: center;
+		padding-bottom: 5px;
+		text-transform: uppercase;
+		@include fontSize(11);
+		font-weight: 400;
+	}
+	p{
+	    margin-top: 18px;
+	    line-height: 23px;
+	    font-weight: 300;
+	}
+	.blog-link{
+		position: relative;
+		display: block;
+	}
+	.read-more-overlay{
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		background: rgba(0,0,0,0.2);
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		transition: all 0.2s ease;
+	}
+}
+
+.blog-article:hover .read-more-overlay{
+	opacity: 1;
+	visibility: visible;
+}
+
+.loadmore{
+		margin: 20px auto;
+}
+@media (max-width: 1281px) {
+	section.other-blog-articles .blog-article:last-child{
+		display: none;
+	}
+}
+
+@media (max-width: 1171px) {
+	section.other-blog-articles .blog-article:nth-last-child(2){
+		display: none;
+	}
+}
+
+@media (max-width: 890px) {
+	section.other-blog-articles .blog-article:nth-last-child(2), section.other-blog-articles .blog-article:last-child{
+		display: block;
+	}
+	.blog-article{
+		width: 100%;
+	}
+}
+

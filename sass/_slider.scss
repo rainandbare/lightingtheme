@@ -1,0 +1,58 @@
+.homemade-slider{
+	position: relative;
+	button.move-left, button.move-right{
+		position: absolute;
+		cursor: pointer;
+		background: $black;
+		color: white;
+		border: none;
+		text-align: center;
+		padding: 10px 20px;
+    	font-size: 23px;
+    	top: 50%;
+    	font-weight: bold;
+    	transition: all 0.2s ease;
+	}
+	button:focus{
+		outline: none;
+	}
+	button:hover, button:focus, button:active{
+		background: $yellow;
+		color: $black;
+	}
+	button.move-left{
+		left: -10px;
+	}
+	button.move-right{
+		right: -10px;
+	}
+	.slides{
+		display: none;
+	}
+}
+	.dot {
+	  cursor:pointer;
+	  height: 13px;
+	  width: 13px;
+	  margin: 10px 2px;
+	  background-color: white;
+	  border: 1px solid $black;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.2s ease;
+	}
+	.active, .dot:hover {
+	  background-color: $black;
+	}
+
+.homemade-slider, .homemade-slider li{
+	width: 600px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.homemade-slider li{
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: absolute;
+}

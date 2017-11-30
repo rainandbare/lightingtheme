@@ -1,0 +1,113 @@
+/*!
+* Theme Name: Viso Inc
+* Theme URI: http://visoinc.com
+* Description: Site Redesign for Viso Inc
+* Version: 1.0
+* Author: Suzette McCanny
+* Author URI: http://suzettemccany.com*/
+
+@import 'variables';
+@import 'fonts';
+@import 'normalize';
+@import 'typography';
+
+@import 'slick';
+@import 'slick-theme';
+
+@import 'home';
+@import 'header';
+@import 'footer';
+
+@import 'page';
+@import '404';
+@import 'search';
+
+
+@import 'blog';
+@import 'single';
+@import 'sidebar';
+// @import 'comments';
+
+@import 'about';
+@import 'contact';
+
+@import 'basicArchive';
+
+
+// ====================================
+// Default Styling
+// ====================================
+// */
+
+
+
+::selection {
+  background: $accent; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: $accent; /* Gecko Browsers */
+  color: white;
+}
+
+.container {
+	width: 100%;
+	max-width: $wrapperWidth;
+	margin: 0px auto;
+	padding: 25px;
+}
+
+.content {
+	float: left;
+	width: 65%;
+	margin-right: 5%;
+}
+
+img {
+	max-width: 100%;
+	line-height: 0;
+	display: block;
+}
+
+svg {
+	width: 100%;
+}
+
+
+.flex{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+}
+.third{
+	width: 33.333333%
+}
+
+header ul, footer ul{
+	list-style: none;
+}
+
+.oneline-form{
+	border: 1px solid $black;
+	max-width: 320px;
+	@include fontSize(14);
+	input{
+		border: none;
+		outline: none;
+		padding: 8px;
+		background-color: $white;
+	}
+	input.search-field, input.mainInput{
+		font-style: italic;
+		width: 80%;
+	}
+	input[type="submit"]{
+		width: 20%;
+	}
+
+}
+
+@import 'mediaQueries';
+
+
+

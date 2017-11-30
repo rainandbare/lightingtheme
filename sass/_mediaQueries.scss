@@ -1,0 +1,199 @@
+@media (max-width: 1180px) {	
+	.dropbtn {
+    	width: 150px;
+	}
+	.nav-main-overalList li.nav-main-link a div.simple-logo {
+	    width: 118px;
+	    margin: 32px 25px;
+	}
+}
+@media (max-width: 1135px){
+	.dropbtn {
+    	width: 130px;
+	}
+	.nav-main-overalList li.nav-main-link a div.simple-logo {
+	    width: 100px;
+	    margin: 32px 20px;
+	}
+	.nav-topBar .nav-utiity-container .nav-utility-links {
+		flex-flow: column-reverse nowrap;
+		align-items: center;
+	}
+	footer .footer-utilities-extras .oneline-form input[type=text] {
+	    width: 190px;
+	}
+}
+@media (max-width: 1060px){
+	footer .footer-menu{
+		flex-flow: column nowrap;
+	}
+	.footer-menu .madeWithLove{
+		display: none;
+	}
+	.footer-utilities-extras  nav.social-nav{
+		display: none;
+	}
+	footer ul#menu-main-footer-menu {
+	    padding: 10px 0;
+	    justify-content: space-between;
+	}
+	footer .midsized-footer{
+		display: flex;
+		margin: -15px 0 7px;
+	    flex-flow: column-reverse nowrap;
+	    align-items: center;
+	    .madeWithLove{
+	    	padding: 5px;
+	    }
+
+	}
+}
+@media (max-width: 1025px){
+	.topBar-socialNav{
+		display: none;
+	}
+	header .midsize-social{
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		background: black;
+		.social-menu {
+			padding: 0px 10px 3px;
+			a{
+				font-size: 11px;
+				color: white;
+			}
+		}
+	}
+	// footer .footer-utilities-extras>* {
+ //    	margin: 0px -5px 12px;
+	// }
+
+	footer .footer-utilities-extras .newsletter{
+		width: 100%;
+		margin: 0;
+	}
+}
+@media (max-width: 890px) {	
+	header .midsize-social {
+		display: none;
+	}
+	.fullscreen-nav{
+		display: none;
+		position: fixed;
+	    top: 0;
+	    bottom: 0;
+	    width: 100%;
+	    background: white;
+	    overflow: scroll;
+	    .btn{
+	    	width: 255px;
+	    }
+	}
+	.topBar-socialNav{
+		width: 255px;
+	}
+	.nav-topBar .social-menu {
+	    display: flex;
+	    flex-flow: row nowrap;
+	    justify-content: space-evenly;
+	}
+	.mobile-menu-icon{
+		display: block;
+		font-size: 30px;
+		margin-right: 35px;
+	}
+	.dropbtn, .nav-main-link a{
+		display: none;
+	}
+	.dropdown-content{
+		display: block;
+		position: static;
+		box-shadow: none;
+		padding: 20px;
+		.innerWrapper{
+			flex-flow: column nowrap;
+			section{
+    			width: 100%;
+			}
+			section.dropdownSection-about{
+				display: flex;
+    			flex-flow: column-reverse nowrap;
+			}
+			.main-menu {
+				padding-bottom: 10px;
+			}
+			.whoWeAre{
+				padding: 10px 0;
+			}
+		}
+	}
+	.oneline-form input.search-field {
+		width: 225px;
+	}
+	.nav-topBar {
+		align-items: center;
+		height: 60px;
+	}
+	.logo-top {
+		width: 100px;
+	    min-width: 100px;
+	}
+	.nav-main-overalList{
+		flex-flow: column nowrap;
+	}
+	.nav-utiity-container{
+		flex-flow: column-reverse nowrap;
+	}
+	.footer-utilities-address  {
+		flex-flow: row wrap;
+		position: relative;
+		flex-shrink: 11362;
+	}
+	.address-container{
+		padding-bottom: 5px;
+	}
+	.HQLogo{
+		position: absolute;
+		left: -19px;
+	}
+	footer ul#menu-main-footer-menu {
+	    flex-flow: column wrap;
+	    max-height: 60px;
+	    li{
+	    	padding: 0;
+	    }
+	}
+}
+@media (max-width: 700px){
+	footer .footer-utilities-extras {
+	    flex-flow: column nowrap;
+	}
+	footer .footer-utilities-extras .catalogue-links{
+		width: 100%;
+		justify-content: space-between;
+		button {
+    		margin: 0; 
+    		width: 49%;
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	footer ul#menu-main-footer-menu {
+    	max-height: 102px;
+	}
+	footer .footer-utilities {
+   		flex-flow: column-reverse nowrap;
+	}
+}
+
+
+@media (max-width: 450px) {
+	.logo-top {
+		margin: 0 8px;
+	}
+	.mobile-menu-icon{
+		margin-right: 15px;
+	}
+}	

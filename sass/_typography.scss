@@ -1,0 +1,188 @@
+@mixin fontSize($sizeValue){
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/16) * 1rem;
+}
+
+
+html{
+    @include fontSize(15);
+}
+
+body{ 
+	color: $black;
+	font-family: $sans;
+}
+
+h1.hidden{
+	visibility: hidden;
+	opacity: 0;
+}
+
+
+h1 {
+	 @include fontSize(34);
+	 text-transform: uppercase;
+}
+
+
+h2{
+	@include fontSize(22);
+	color: $accent;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+h3{
+	@include fontSize(18);
+	text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h4{
+	 @include fontSize(18);
+	 font-weight: 700;
+}
+h5{
+
+}
+h6{
+	letter-spacing: 1px;
+}
+
+p{
+	font-family: $type;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+p.special{
+	color: $accent;
+	font-style: italic;
+}
+a {
+	// color: $white;
+	text-decoration: none;
+	transition: all 0.25s ease;
+	&:hover {
+		color: $accent;
+	}
+}
+a{color: $black;}
+
+.btn{
+	background: $black;
+	color: $white;
+	border-radius: 0px;
+	border: 2px solid transparent;
+	padding: 10px 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	font-weight: 300;
+	transition: all 0.4s ease;
+	min-width: 108px;
+	display: block;
+	font-weight: 400;
+	@include fontSize(11);
+	a{
+		color: $white;
+	}
+}
+
+.btn:not(.redbtn):hover{
+	color: black;
+	border: 2px solid black;
+	background: white;
+	
+}
+.btn:not(.redbtn):hover a{
+	color: black;
+	font-weight: 400;
+}
+.redbtn{
+	background: $accent;
+	color: white;
+}
+
+
+
+/*blockquotes*/
+
+blockquote {
+	background: #F7F7F7;
+	margin: 0;
+	padding: 20px;
+	p {
+		margin-top: 0;
+	}
+}
+
+/*tables*/
+
+table {
+	td {
+		padding: 10px;
+	}
+	tr td:first {
+		padding-right: 0;
+	}
+}
+
+/*def lists*/
+
+dt {
+	font-weight: 600;
+	padding-bottom: 5px;
+}
+
+dd {
+	padding: 10px;
+	margin-left: 10px;
+}
+
+/*lists*/
+
+
+
+/*PRE*/
+
+pre {
+	background: #F7F7F7;
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+
+
+/*
+====================================
+Global Classes / Wordpress Specific
+====================================
+*/
+
+.aligncenter {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+img {
+	&.alignleft {
+		padding-right: 5px;
+	}
+	&.alignright {
+		padding-left: 5px;
+	}
+}
+
+.clear {
+	width: 100%;
+	float: left;
+	clear: both;
+}

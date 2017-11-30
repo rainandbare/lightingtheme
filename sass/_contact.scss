@@ -1,0 +1,56 @@
+
+.wpcf7-form{
+	p span{
+		width: 100%;
+		display: block;
+		input{
+		width: 100%;
+	}
+	} 
+	
+	span.opt-in, input[name="opt-in"]{
+		width: initial;
+		display: inline-block;
+		padding-right: 10px !important;
+	}
+}
+.wpcf7-select{
+	height: 52px;
+	margin-bottom: -1em;
+}
+.wpcf7-text, .wpcf7-textarea, .wpcf7-captchar, .wpcf7-select {
+	background-color: #eee !important;
+	border: none !important;
+	width: 100% !important;
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+	font-size: 14px;
+	color: #999 !important;
+	padding: 10px 13px !important;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.wpcf7-submit {
+	color: $accent !important;
+	margin: 25px auto 0;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 500;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 1.7em;
+	background: transparent;
+	border: 1px solid $accent !important;
+	padding: 6px 20px !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transition: all 0.2s ease !important;
+}
+.wpcf7-submit:hover { 
+background-color: $accent !important; 
+color: $white !important;
+
+}
