@@ -93,6 +93,9 @@ class VISO_Recent_Posts extends WP_Widget {
 							<h5><?php echo $title ; ?></h5>
 							<h6><?php echo get_the_date( '', $recent_post->ID ); ?></h6>
 						</div>
+						<div class="overlay">
+							<button class="btn redbtn">Read More</button>
+						</div>
 					</a>
 				</li>
 			<?php endforeach; ?>

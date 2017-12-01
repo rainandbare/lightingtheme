@@ -1,6 +1,7 @@
 .basic-main{
 	width: 67%;
 	float: left;
+	padding-top: 25px;
 	&.no-sidebar{
 		width: 100%;
 		float: none;
@@ -16,8 +17,9 @@
 	.basic-post{
 		width: calc(33.333% - 20px);
 		margin: 10px 0px;
-		padding: 20px;
-		border: 1px solid black;
+		padding: 30px;
+		border: 1px solid #dddddd;;
+		box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.15);
 		display: flex;
 		flex-flow: row nowrap;
 		article{

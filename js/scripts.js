@@ -57,8 +57,7 @@ app.frontPageSlider = function() {
 }
 app.toggleRequestPrintCatalogue = function(){
 	$('button#requestcatalogue').on('click', function(){
-		console.log('clicked');
-		$('#popup-requestcatalogue').show();
+		$('#popup-requestcatalogue').slideDown();
 		$('#close-requestcatalogue').on('click', function(){
 			$('#popup-requestcatalogue form').find("input[type=text], textarea").val("");
 			$('#popup-requestcatalogue').hide();
@@ -67,7 +66,6 @@ app.toggleRequestPrintCatalogue = function(){
 }
 app.togglePhotoInfo = function(){
 	$('.info-icon').on('click', function(){
-
 		$(this).parent().find('.info-content').slideToggle();
 	});
 }

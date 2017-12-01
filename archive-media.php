@@ -12,7 +12,7 @@
            <?php endwhile; ?> <!-- end of loop -->
            <?php if (  $wp_query->max_num_pages > 1 ){ ?>
           </section>
-          <button id="loadMorePosts" class="basic-archive-load loadmore btn redbtn">Load More</button>
+          <button id="loadMorePosts" class="basic-archive-load loadmore btn redoutline">Load More</button>
           <?php }?>   
         </section>
       <?php endif; ?>

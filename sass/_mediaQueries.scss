@@ -39,13 +39,15 @@
 	}
 	footer .midsized-footer{
 		display: flex;
-		margin: -15px 0 7px;
+		margin: 0px 0 7px;
 	    flex-flow: column-reverse nowrap;
 	    align-items: center;
 	    .madeWithLove{
 	    	padding: 5px;
 	    }
-
+	}
+	.sub-footer ul {
+    	justify-content: center;
 	}
 }
 @media (max-width: 1025px){
@@ -164,6 +166,10 @@
 	    	padding: 0;
 	    }
 	}
+	.blurb {
+	    top: 295px;
+	    width: 60%;
+	}
 }
 @media (max-width: 700px){
 	footer .footer-utilities-extras {
@@ -176,6 +182,13 @@
     		margin: 0; 
     		width: 49%;
 		}
+	}
+}
+
+@media (max-width: 650px){
+	.blurb {
+	    top: 160px;
+	    width: 100%;
 	}
 }
 

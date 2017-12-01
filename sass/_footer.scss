@@ -22,12 +22,12 @@ footer{
 	}
 	address, div.contact{
 		@include fontSize(9);
-		min-width: 89px;
+		min-width: 91px;
 		font-style: normal;
 		padding: 0 5px 0 0;
 	}
 	address.longAddress{
-		min-width: 107px;
+		min-width: 109px;
 	}
 	h6{
 		text-transform: uppercase;
@@ -44,7 +44,7 @@ footer{
 		.HQLogo{
 			display: flex;
 			flex-flow: column nowrap;
-			justify-content: flex-end;
+			justify-content: center;
 			margin: 0 10px 0 0;
 			i{
 				color: $accent;
@@ -103,7 +103,6 @@ footer{
 			max-width: 800px;
 			margin: 0 auto;	
 			position: relative;
-			border: 1px solid black;
 			h3{
 				text-align: center;
 			}

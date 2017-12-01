@@ -52,11 +52,13 @@
 
 .container {
 	width: 100%;
-	max-width: $wrapperWidth;
+	max-width: 1450px;
 	margin: 0px auto;
 	padding: 25px;
 }
-
+.hf-container{
+	max-width: $wrapperWidth;
+}
 .content {
 	float: left;
 	width: 65%;
@@ -90,6 +92,7 @@ header ul, footer ul{
 .oneline-form{
 	border: 1px solid $black;
 	max-width: 320px;
+	min-width: 137px;
 	@include fontSize(14);
 	input{
 		border: none;

@@ -11,6 +11,9 @@ section.intro{
 section.banner{
 	position: relative;
 	padding-bottom: 20px;
+	img{
+		margin: 0 auto;
+	}
 	 h2 {
 	    background: rgba(255,255,255,0.60);
 	    color: #333333 !important;
@@ -35,7 +38,7 @@ div.blog-image{
 	background-position: center;
 }
 .blog-article{
-	width: 25%;
+	width: 20%;
 	position: relative;
 	padding: 20px;
 	h3{
@@ -96,6 +99,9 @@ div.blog-image{
 @media (max-width: 1281px) {
 	section.other-blog-articles .blog-article:last-child{
 		display: none;
+	}
+	.blog-article{
+		width: 25%;
 	}
 }
 

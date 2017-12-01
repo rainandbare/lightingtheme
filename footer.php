@@ -1,5 +1,5 @@
 <footer>
-	<div class="container">
+	<div class="container hf-container">
 		<section class="footer-menu flex">
 			<?php suzette_footer_links(); ?>  
 			<div class="madeWithLove flex">Made with <i class="fa fa-heart" aria-hidden="true"></i> in Toronto</div>
