@@ -55,11 +55,13 @@ class VISO_Recent_Posts extends WP_Widget {
 		 * @param array $args     An array of arguments used to retrieve the recent posts.
 		 * @param array $instance Array of settings for the current widget.
 		 */
+		$currentID = get_the_ID();
 		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
 			'posts_per_page'      => $number,
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
 			'ignore_sticky_posts' => true,
+			'post__not_in' => array($currentID),
 			
 		), $instance ) );
 

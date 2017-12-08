@@ -63,9 +63,13 @@
                       <li><a href="<?= site_url(); ?>/mission">Misson</a></li>
                     </ul>
                   </section>
-                  <section class="dropdownSection-blog"> 
+                  <section class="dropdownSection-feature"> 
                     <div class="temp-image-control">
-                      <a href=""><img src="<?php echo get_template_directory_uri(); ?>/img/German-Design-Nomination.jpg"></a>
+                      <?php $frontpage_id = get_option( 'page_on_front' ); ?>
+                      <?php $featurePhoto = get_field( "dropdown_photo", $frontpage_id ); ?>
+                      <?php $featureLink = get_field( "dropdown_photo_link", $frontpage_id ); 
+                      ?>
+                      <a href="<?= $featureLink ?>"><img src=" <?= $featurePhoto['url']  ?> "></a>
                     </div>
                     <?php
                         //$args = array( 'numberposts' => '1' );
@@ -91,7 +95,7 @@
           </ul>
       </nav>      
       <ul class="flex nav-utiity-container">
-        <li>
+        <li class="topBar-utilityNav">
           <ul class="nav-utility-links">
             <li><a href="<?= site_url(); ?>/contact-us">Contact</a></li>
             <li><a href="http://eepurl.com/-4aaH" target="_blank">Newsletter</a></li>
@@ -101,9 +105,7 @@
           <?php get_template_part( 'templates/nav', 'social' ); ?>
         </li>
         <li class="topBar-downloadLink">
-            <?php 
-            $frontpage_id = get_option( 'page_on_front' );
-            $catalogueURL = get_field( "catalogue_upload", $frontpage_id ); ?>
+            <?php $catalogueURL = get_field( "catalogue_upload", $frontpage_id ); ?>
             <a class="btn" href="<?= $catalogueURL; ?>" download="" target="_blank">DOWNLOAD CATALOGUE</a>
         </li>
         <li class='topBar-search'>   
@@ -113,6 +115,13 @@
         </li>
       </ul>
     </div>
-     <div id="mobile-menu-icon" class="mobile-menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></div>
+    <div id="mobile-menu-icon" class="mobile-menu-icon">
+      <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
+      <div id="nav-icon4">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </nav>
 </header><!--/.header-->

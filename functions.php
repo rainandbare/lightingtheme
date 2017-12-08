@@ -54,13 +54,14 @@ function suzette_scripts() {
   	true //load in footer
   );
 
-    wp_enqueue_script(
-  	'jquery-migrate',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://code.jquery.com/jquery-migrate-1.2.1.min.js",
-  	false, //dependencies
-  	null, //version number
-  	true //load in footer
-  );
+  //   wp_enqueue_script(
+  // 	'jquery-migrate',
+  // 	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://code.jquery.com/jquery-migrate-1.2.1.min.js",
+  // 	false, //dependencies
+  // 	null, //version number
+  // 	true //load in footer
+  // );
+
   wp_enqueue_script(
   	'font-awesome',
   	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://use.fontawesome.com/a75cef987b.js",
@@ -78,17 +79,9 @@ function suzette_scripts() {
   );
 
   wp_enqueue_script(
-    'plugins', //handle
-    get_template_directory_uri() . '/js/plugins.js', //source
-    false, //dependencies
-    null, // version number
-    true //load in footer
-  );
-
-  wp_enqueue_script(
     'scripts', //handle
     get_template_directory_uri() . '/js/main.min.js', //source
-    array( 'jquery', 'plugins' ), //dependencies
+    array( 'jquery' ), //dependencies
     null, // version number
     true //load in footer
   );
@@ -249,6 +242,20 @@ function hackeryou_posted_in() {
 }
 endif;
 
+if ( ! function_exists( 'suzette_custom_taxonomies' ) ) :
+/**
+ * Prints HTML with meta information for the current post (category, tags and permalink).
+ */
+function suzette_custom_taxonomies($id, $tax) {
+	// Retrieves tag list of current post, separated by commas.
+	$taxonomies = get_the_terms( $id, $tax, '', ', ');
+	foreach ($taxonomies as $taxonomy) {
+		echo $taxonomy->slug . " ";
+	}
+
+}
+endif;
+
 /* Get rid of junk! - Gets rid of all the crap in the header that you dont need */
 
 function clean_stuff_up() {
@@ -405,7 +412,13 @@ add_action( 'pre_get_posts', function ( $query ) {
   if ( $query->is_post_type_archive( 'press-release' ) && $query->is_main_query() && ! is_admin() ) {
     $query->set( 'posts_per_page', 8 );
   }
+  $post_types = array('collections', 'projects', 'inspirations');
+  if ( $query->is_post_type_archive( $post_types ) && $query->is_main_query() && ! is_admin() ) {
+    $query->set( 'posts_per_page', -1 );
+    $query->set( 'post_status', 'publish' );
+  }
 } );
+
 
 function misha_my_load_more_scripts() {
 	global $wp_query; 
@@ -452,3 +465,29 @@ function misha_loadmore_ajax_handler(){
  
 add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+
+function divi_child_theme_setup() {
+    if ( ! class_exists('ET_Builder_Module') ) {
+        return;
+    }
+ 
+    get_template_part( 'custom-modules/cfwpm' );
+ 
+    $cfwpm = new Custom_ET_Builder_Module_Portfolio();
+ 
+    remove_shortcode( 'et_pb_filterable_portfolio' );
+    
+    add_shortcode( 'et_pb_filterable_portfolio', array($cfwpm, '_shortcode_callback') );
+    
+}
+ 
+add_action( 'wp', 'divi_child_theme_setup', 9999 );
+
+function relationship_options_filter($options, $field, $the_post) {
+	$options['post_status'] = 'publish';
+	return $options;
+}
+
+add_filter('acf/fields/post_object/query', 'relationship_options_filter', 10, 3);

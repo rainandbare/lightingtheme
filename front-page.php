@@ -6,7 +6,7 @@
 		<?php the_content(); ?>
 	</div>
 	<div class="frontpage-slider">
-	<?php
+		<?php
 		if( have_rows('banner') ):
 		    while ( have_rows('banner') ) : the_row();
 		        $imageURL = get_sub_field('image');  
@@ -33,7 +33,10 @@
 		<div class="slide" style="background-color: black">
 <!-- 			<i class="fa fa-play" aria-hidden="true"></i> -->
 			<div class="video-container">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/UkDDLp0CsOU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>	
+					<div class="youtube" data-embed="UkDDLp0CsOU">
+						<div class="play-button"></div>
+					</div>
+			<!-- 	<iframe width="560" height="315" src="https://www.youtube.com/embed/UkDDLp0CsOU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->	
 			</div>
 			
 		</div>
