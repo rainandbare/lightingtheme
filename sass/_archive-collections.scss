@@ -1,0 +1,28 @@
+.archive-collections{
+	.collection-wrapper{
+		width: 1200px;
+		margin: 0 auto;
+		display: grid;
+    	grid-gap: 10px;
+		grid-template-columns: repeat(4, 1fr);
+		a.archive-collection-single{
+			background-color: #E8E8E8;
+		  	color: #fff;
+		  	padding: 20px;
+		  	font-size: 150%;
+		  	display: block;
+		  	article{
+		  		display: flex;
+		  		flex-flow: column nowrap;
+			    justify-content: space-between;
+			    height: 100%;
+		  	}
+		}
+		a.archive-collection-single.hide{
+			display: none;
+		}
+		.tallbox{
+			grid-row: span 2;
+		}
+	}
+}

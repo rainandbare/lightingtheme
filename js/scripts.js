@@ -10,6 +10,7 @@ $(function(){
 	app.togglePhotoInfo();
 	app.videoLazyLoad();
 	app.sortCustomTaxonomies();
+	app.toggleInfo();
 });
 app.width = window.innerWidth;
 app.windowResize = function(){
@@ -94,21 +95,12 @@ app.frontPageSlider = function() {
 }
 app.collectionSlider = function() {
     
- $('.collection-slider-feature').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: true,
-  asNavFor: '.collection-slider-nav'
-});
-$('.collection-slider-nav').slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: '.collection-slider-feature',
-  dots: true,
-  centerMode: true,
-  focusOnSelect: true
-});
+	$('.collection-slider').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  dots: true,
+	  arrows: false,
+	});
 	
 }
 app.toggleRequestPrintCatalogue = function(){
@@ -149,6 +141,7 @@ app.videoLazyLoad = function(){
 
 app.sortCustomTaxonomies = function(){
 	$('#sortTypesList button').on("click", function(){
+		//console.log('clicked')
 		var category = $(this).attr('id');
 		console.log(category);
 		
@@ -156,11 +149,19 @@ app.sortCustomTaxonomies = function(){
 		
 		for (var i = articles.length - 1; i >= 0; i--) {
 			articles[i].classList.remove('hide');
-			if (!Array.from(articles[i].classList).includes(category)) {
+			// console.dir(articles[i].dataset.type.split(' '))
+
+			if (!Array.from(articles[i].dataset.type.split(' ')).includes(category)) {
 				articles[i].classList.add('hide');
 				console.log(articles[i])
 			};
 		}
 		//hide all the articles that do not match the class of the li
+	});
+}
+app.toggleInfo = function(){
+	$('.dropdown').on('click', function(){
+		$(this).find('.see-more').slideToggle();
+  		$(this).find('.circle-plus').toggleClass('opened');
 	});
 }

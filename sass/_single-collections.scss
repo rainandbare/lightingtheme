@@ -1,0 +1,85 @@
+.single-collections{
+	.popup-form{
+		display: none;
+	}
+	h3{
+		font-size: 20px;
+		font-weight: 300;
+		text-transform: initial;
+	}
+	h6{
+		color: grey;
+		font-weight: 300;
+	}
+	h4{
+		text-align: left;
+	}
+	.variation img{
+		border-radius: 50%;
+		height: 50px;
+		width: 50px;
+	}
+	.see-more{
+		display: none;
+	}
+}
+
+.single-collection-photos, .single-collection-info{
+	width: 50%;
+	padding: 40px 50px;
+}
+
+.closed {
+  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+  }
+  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+  }
+}
+
+.opened {
+  opacity: 1;
+  .vertical {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+  }
+  .horizontal {
+    transition: all 0.5s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.circle-plus .circle {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: solid 1px black;
+}
+.circle-plus .circle .horizontal {
+    position: absolute;
+    background-color: black;
+    width: 9px;
+    height: 1px;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+}
+.circle-plus .circle .vertical {
+    position: absolute;
+    background-color: black;
+    width: 1px;
+    height: 9px;
+    left: 50%;
+    margin-left: -1px;
+    top: 50%;
+    margin-top: -5px;
+}
+
+

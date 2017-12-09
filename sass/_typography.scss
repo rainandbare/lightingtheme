@@ -20,10 +20,18 @@ h1.hidden{
 
 
 h1 {
-	 @include fontSize(34);
-	 text-transform: uppercase;
+	@include fontSize(22);
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 400;
+    padding-bottom: 20px;
 }
 
+h1.single-product-title{
+	@include fontSize(40);
+	text-align: left;
+}
 
 h2{
 	@include fontSize(22);
@@ -40,8 +48,12 @@ h3{
 }
 
 h4{
-	 @include fontSize(18);
-	 font-weight: 700;
+	 @include fontSize(15);
+	 font-weight: 300;
+	 color: $black;
+	 text-align: center;
+	 padding-top: 10px;
+	 text-transform: uppercase;
 }
 h5{
 
@@ -74,12 +86,13 @@ a{color: $black;}
 	background: $black;
 	color: $white;
 	border-radius: 0px;
-	border: 2px solid transparent;
+	border: 1px solid transparent;
 	padding: 10px 12px;
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	transition: all 0.4s ease;
 	min-width: 115px;
+	max-width: 300px;
 	display: block;
 	font-weight: 400;
 	text-align: center;
@@ -92,7 +105,7 @@ a{color: $black;}
 
 .btn:not(.redbtn):hover, .btn:not(.redbtn):active{
 	color: black;
-	border: 2px solid black;
+	border: 1px solid black;
 	background: white;
 }
 

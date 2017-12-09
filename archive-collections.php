@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<main class="main-page">
+<main class="main-page archive-collections">
   <div class="container">
-      <h2>Collections</h2>
+      <h1 class="page-title">Collections</h1>
       <ul id="sortTypesList" class="flex">
         <li><button class="sortTypes-button" id="all">All</button></li>
         <?php 
@@ -16,17 +16,12 @@
           <?php }; ?>
       </ul>
       <?php if (have_posts() ) : ?>
-        <section class="basic-main no-sidebar">
-          <section id="sortArticles" class="basic-archive">
+          <section id="sortArticles" class="collection-wrapper">
             <?php while ( have_posts() ) : the_post(); ?> 
               <? //get_template_part( 'templates/collections-archive', get_post_format() ); ?>
               <? include(locate_template('templates/collections-archive.php')); ?>
             <?php endwhile; ?> <!-- end of loop -->
-           <?php if (  $wp_query->max_num_pages > 1 ){ ?>
           </section>
-          <button id="loadMorePosts" class="basic-archive-load loadmore btn redoutline">Load More</button>
-          <?php }?>   
-        </section>
       <?php endif; ?>
   </div>
 </main> <!-- /.main -->
