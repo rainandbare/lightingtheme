@@ -20,14 +20,13 @@ footer{
 		}
 
 	}
-	address, div.contact{
-		@include fontSize(9);
-		min-width: 91px;
-		font-style: normal;
-		padding: 0 5px 0 0;
+	div.address{
+		padding: 0px 5px 5px 0px;
 	}
-	address.longAddress{
-		min-width: 109px;
+	address, div.contact{
+		@include fontSize(10);
+		font-style: normal;
+		padding: 0 10px 0 0;
 	}
 	h6{
 		text-transform: uppercase;
@@ -41,20 +40,22 @@ footer{
 	.footer-utilities{
 		padding: 10px 0px 5px;
 		justify-content: space-between;
-		.HQLogo{
+		.HQLogoMobile, .HQLogo{
 			display: flex;
 			flex-flow: column nowrap;
-			justify-content: center;
-			margin: 0 10px 0 0;
+			margin: 10px 10px 0 0;
 			i{
 				color: $accent;
 			}
+		}
+		.HQLogoMobile{
+			display: none;
 		}
 	}
 	.footer-utilities-extras{
 		align-items: center;
 		& > *{
-			margin: 5px 5px 10px;
+			margin: 10px;
 
 		}
 		.catalogue-links button{

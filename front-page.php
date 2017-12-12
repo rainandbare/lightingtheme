@@ -7,22 +7,33 @@
 	</div>
 	<div class="frontpage-slider">
 		<?php
-		if( have_rows('banner') ):
-		    while ( have_rows('banner') ) : the_row();
-		        $imageURL = get_sub_field('image');  
-		        $imageInfo = get_sub_field('info'); 
-		        $videoLink = get_sub_field('video_link');
-		        ?>
-		        <div class="slide" style="background-image: url( <?php echo $imageURL['url']; ?> );">
-		        	<?php if ($imageInfo !== ""){  ?>
-			        	<div class="info clearfix">
-			        		<div class="info-content"><?php echo $imageInfo; ?></div>
-			        		<button class="info-icon">i</button>
-			        	</div>
-		        	<?php }	?>
-		        	<?php if ($videoLink !== ""){  ?>
-		        	<?php }	?>
-		        </div>
+		if( have_rows('slider') ):
+		    while ( have_rows('slider') ) : the_row();
+		      	if (get_row_layout() == 'image'){ 
+		      		$imageURL = get_sub_field('image');  
+			        $imageInfo = get_sub_field('info'); 
+			        $imageLink = get_sub_field('link'); ?>
+			        <div class="slide" style="background-image: url( <?php echo $imageURL['url']; ?> );">
+			        	<?php if ($imageLink !== ""){  ?>
+			        		<a class="slide-link" href="<?php echo $imageLink; ?>"></a>
+			        	<?php }	?>
+			        	<?php if ($imageInfo !== ""){  ?>
+				        	<div class="info clearfix">
+				        		<div class="info-content"><?php echo $imageInfo; ?></div>
+				        		<button class="info-icon">i</button>
+				        	</div>
+			        	<?php }	?>
+			        </div>
+		        <?php }	elseif (get_row_layout() == 'video'){ ?>
+			        <div class="slide" style="background-color: black">
+						<div class="video-container">
+							<div class="youtube" data-embed=<?php the_sub_field('video_id'); ?>>
+								<div class="play-button"></div>
+							</div>
+						</div>
+					</div>
+		        <?php }?>
+
 		       
 		   <?php endwhile; 
 		else :
@@ -30,16 +41,6 @@
 		endif;
 
 		?>
-		<div class="slide" style="background-color: black">
-<!-- 			<i class="fa fa-play" aria-hidden="true"></i> -->
-			<div class="video-container">
-					<div class="youtube" data-embed="UkDDLp0CsOU">
-						<div class="play-button"></div>
-					</div>
-			<!-- 	<iframe width="560" height="315" src="https://www.youtube.com/embed/UkDDLp0CsOU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->	
-			</div>
-			
-		</div>
 	</div>
     
 	<?php endwhile; ?>

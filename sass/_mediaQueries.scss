@@ -1,3 +1,27 @@
+@media (max-width: 1682px){
+	.otherMenuLink{
+    	margin-bottom: 0px;
+    }
+}
+
+
+@media (max-width: 1500px){
+	.dropdown-content section.dropdownSection-about{
+		width: 35%;
+	}
+}
+@media (max-width: 1400px){
+	.innerWrapper{
+		padding: 40px 5%;
+    	max-width: 1080px;
+	}
+	.footer-utilities-address  {
+		flex-flow: row wrap;
+		position: relative;
+	}
+
+}
+
 @media (max-width: 1180px) {	
 	.dropbtn {
     	width: 150px;
@@ -81,10 +105,7 @@
 	}
 }
 @media (max-width: 925px) {
-	.footer-utilities-address  {
-		flex-flow: row wrap;
-		position: relative;
-	}
+
 	footer .footer-utilities-extras .catalogue-links button {
     	margin: 0 0 0 10px;
 	}
@@ -97,10 +118,6 @@
 	    flex-flow: column nowrap;
 	    justify-content: center;
 	}
-	.address-container:nth-child(3){
-		padding-left: 26px;
-	}
-
 	footer ul#menu-main-footer-menu {
 	    flex-flow: row wrap;
 	    justify-content: space-evenly;
@@ -228,9 +245,16 @@
 		padding-top: 10px;
 		justify-content: center;
 	}
-	.address-container:nth-child(3) {
-    	padding-left: 9px;
+	.address-container:nth-of-type(1n+3){
+		padding-left: 14px;
 	}
+	footer .footer-utilities .HQLogo{
+		display: none;
+	}
+	footer .footer-utilities .HQLogoMobile{
+		display: flex;
+	}
+
 
 }
 

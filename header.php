@@ -48,7 +48,7 @@
                 <div class="innerWrapper flex">
                   <section class="dropdownSection-mainMenu"> 
                     <?php suzette_main_menu(); ?> 
-                    <ul>
+                    <ul class="otherMenuLink">
                       <li><a href="<?= site_url(); ?>/shipping-information">Shipping Information</a></li>
                     </ul>
                   </section>
@@ -59,7 +59,7 @@
                         <p class="special">At VISO, our goal is simple. We design unique, contemporary decorative light fixtures for our customers. We manufacture using only the highest quality materials, provide unparalleled customer service and always strive to deliver on time and on budget.</p>
                       </a>
                     </div>
-                    <ul>
+                    <ul class="otherMenuLink">
                       <li><a href="<?= site_url(); ?>/mission">Misson</a></li>
                     </ul>
                   </section>

@@ -18,17 +18,14 @@ app.windowResize = function(){
 	$( window ).resize(function() {
 		var originalWidth = app.width;
 		app.width = window.innerWidth;
-		console.log(originalWidth, app.width);
 		//if the window size transitions from over 891 to under 891
 		if((originalWidth >= 891) && (app.width < 891)){
-			console.log('do the mobile deed');
 			$('.dropdown-content').show();
 			$('.fullscreen-nav').css('display', 'none');
 
 		}
 		//if the window size transitions from under 891 to over 891
 		if((originalWidth <= 890) && (app.width > 890)){
-			console.log('desktop alert alert!!');
 			$('.dropdown-content').hide();
 			$('.fullscreen-nav').css('display', 'flex');
 			$('#nav-icon4').removeClass('open');
@@ -75,7 +72,6 @@ app.menuToggle = function() {
 }	
 app.mobileMenu = function(){
 	$('#mobile-menu-icon').on('click', function(){
-		console.log('clicked');
 		$('.fullscreen-nav').toggle();
 		$('#nav-icon4').toggleClass('open');
 	});
@@ -85,21 +81,26 @@ app.frontPageSlider = function() {
     	slidesToShow: 1,
   		slidesToScroll: 1,
     	dots: true,
-    	arrows: false,
     	pauseOnFocus: false,
     	pauseOnHover: false,
     	speed: 900,
     	autoplay: true,
   		autoplaySpeed: 9000,
     });
+
+    // On before slide change
+    $('.frontpage-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+		$('.info-content').slideUp();
+		//stop video
+	});
+
 }
 app.collectionSlider = function() {
     
 	$('.collection-slider').slick({
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
-	  dots: true,
-	  arrows: false,
+	  dots: true
 	});
 	
 }
@@ -115,7 +116,9 @@ app.toggleRequestPrintCatalogue = function(){
 app.togglePhotoInfo = function(){
 	$('.info-icon').on('click', function(){
 		$(this).parent().find('.info-content').slideToggle();
+		
 	});
+
 }
 
 
@@ -135,6 +138,7 @@ app.videoLazyLoad = function(){
 							iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
 							this.innerHTML = "";
 							this.appendChild( iframe );
+					$('.frontpage-slider').slick('slickPause');
 				} );	
 	};
 }
@@ -143,8 +147,6 @@ app.sortCustomTaxonomies = function(){
 	$('#sortTypesList button').on("click", function(){
 		//console.log('clicked')
 		var category = $(this).attr('id');
-		console.log(category);
-		
 		var articles = document.getElementById('sortArticles').children;
 		
 		for (var i = articles.length - 1; i >= 0; i--) {

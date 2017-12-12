@@ -113,9 +113,9 @@ a{color: $black;}
 	color: black;
 }
 .btn:not(.redbtn):active{
-	color: white;
-	border: 2px solid $accent;
-	background: $accent;
+	color: black;
+	border: 1px solid black;
+	background: white;
 }
 .btn:not(.redbtn):active a{
 	color: white;

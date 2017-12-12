@@ -1,7 +1,7 @@
 
 	.blurb{
 	    position: absolute;
-	    z-index: 8;
+	    z-index: 1;
 	    top: 40vh;
 		 width: 40%;
 	    p{
@@ -22,6 +22,7 @@
 		padding: 30px;
 		background: $transparentWhite;
 		display: none;
+		font-style: italic;
 	}
 	.info-icon{
 		border: none;
@@ -115,15 +116,20 @@
 	top: 0;
 	left: 0;
 }
-	.slide{
-		height: calc(100vh - 115px);
-		background-size: cover;
-		background-position: center;
-		display: none;
-		position: relative;
-	}
+.slide{
+	height: calc(100vh - 115px);
+	background-size: cover;
+	background-position: center;
+	display: none;
+	position: relative;
+}
 
-
-	.slide:first-of-type{
-		display: block;
-	}
+.slide:first-of-type{
+	display: block;
+}
+.slide-link{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+}
