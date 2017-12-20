@@ -19,9 +19,20 @@
 
 <header class="siteHeader">
   <nav class="midsize-social flex">
+    <ul class="nav-utility-links">
+      <li><a href="<?= site_url(); ?>/contact-us">Contact</a></li>
+      <li><a href="http://eepurl.com/-4aaH" target="_blank">Newsletter</a></li>
+    </ul>
     <?php get_template_part( 'templates/nav', 'social' ); ?>
   </nav>
-  <nav class="flex nav-topBar">
+  <?php if(is_front_page()){ ?>
+    <nav class="flex nav-topBar">
+  <?php } else { ?>
+ <!--  <nav class="flex nav-topBar" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/QASH.jpg);"> -->
+<?php $frontpage_id = get_option( 'page_on_front' ); ?>
+<?php $headerBackground = get_field('header_background_image', $frontpage_id); ?>
+<nav class="flex nav-topBar" style="background-image: url(<?php echo $headerBackground['url'] ?>);">
+  <?php } ?>
     <div class="flex nav-main-container">
       <!-- for seo purposes -->
       <?php if(is_front_page()){?>
@@ -66,10 +77,9 @@
                   <section class="dropdownSection-feature"> 
                     <div class="temp-image-control">
                       <?php $frontpage_id = get_option( 'page_on_front' ); ?>
-                      <?php $featurePhoto = get_field( "dropdown_photo", $frontpage_id ); ?>
-                      <?php $featureLink = get_field( "dropdown_photo_link", $frontpage_id ); 
+                      <?php $featureInfo = get_field( 'dropdown_photo_info', $frontpage_id ); 
                       ?>
-                      <a href="<?= $featureLink ?>"><img src=" <?= $featurePhoto['url']  ?> "></a>
+                      <a href="<?= $featureInfo['dropdown_photo_link'] ?>"><img src=" <?= $featureInfo['dropdown_photo']['url'];  ?> "></a>
                     </div>
                     <?php
                         //$args = array( 'numberposts' => '1' );
@@ -86,23 +96,14 @@
               </div>
             </li>
             <li class="nav-main-link">
-              <a class="flex" href="http://simple.lighting">
-                <div class="simple-logo">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/simple-logo.png" alt="Simple by Viso Logo">
-                </div>
-              </a>
+              
             </li>
           </ul>
       </nav>      
       <ul class="flex nav-utiity-container">
-        <li class="topBar-utilityNav">
-          <ul class="nav-utility-links">
-            <li><a href="<?= site_url(); ?>/contact-us">Contact</a></li>
-            <li><a href="http://eepurl.com/-4aaH" target="_blank">Newsletter</a></li>
-          </ul>
-        </li>
-        <li class="topBar-socialNav">
-          <?php get_template_part( 'templates/nav', 'social' ); ?>
+        <li>
+          <h4>*Free Shipping</h4>
+          <p class="shipping-info">More Information</p>
         </li>
         <li class="topBar-downloadLink">
             <?php $catalogueURL = get_field( "catalogue_upload", $frontpage_id ); ?>
@@ -112,6 +113,13 @@
           <div class="top-header-search">
             <?php get_search_form(); ?>
           </div>
+        </li>
+        <li>
+          <a class="flex" href="http://simple.lighting">
+            <div class="simple-logo">
+              <img src="<?php echo get_template_directory_uri(); ?>/img/simple-logo.png" alt="Simple by Viso Logo">
+            </div>
+          </a>
         </li>
       </ul>
     </div>

@@ -1,4 +1,7 @@
 .main-post{
+	.container{
+		padding-top: 45px;
+	}
 	section.banner{
 		height: 500px;
 		background-size: cover;
@@ -6,8 +9,8 @@
 		margin-bottom: 50px;
 	}
 	article.post{
-		margin: 0 30px;
-		width: calc(70% - 60px;);
+		padding: 0 30px;
+		width: 70%;
 		float: left;
 		img{
 			height: auto;
@@ -27,9 +30,8 @@
 
 	}
 	h1{
-		font-weight: 300 !important;
-		text-transform: initial;
 		margin-bottom: 10px;
+		text-align: left;
 	}
 	.entry-meta{
 		@include fontSize(11);
@@ -48,7 +50,7 @@
 		}
 	}
 }
-.single-press-release{
+.single-press-release, .single-media{
 	article.post{
 		h1{
 			padding-top: 40px;
@@ -56,5 +58,10 @@
 		margin: 0 30px;
 		width: initial;
 		float: none;
+	}
+}
+.single-media{
+	.addtoany_share_save_container{
+		text-align: center;
 	}
 }

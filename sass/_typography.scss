@@ -19,7 +19,7 @@ h1.hidden{
 }
 
 
-h1 {
+h1, h2.page-title {
 	@include fontSize(22);
     text-transform: uppercase;
     text-align: center;
@@ -29,15 +29,16 @@ h1 {
 }
 
 h1.single-product-title{
-	@include fontSize(40);
+	@include fontSize(45);
 	text-align: left;
+	padding-bottom: 5px;
+	padding-right: 40px;
 }
 
 h2{
 	@include fontSize(22);
-	color: $accent;
-    font-weight: 700;
-    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
 h3{
@@ -126,7 +127,7 @@ a{color: $black;}
 }
 .redoutline{
 	color: $accent;
-	border: 2px solid $accent;
+	border: 1px solid $accent;
 	background: white;
 }
 

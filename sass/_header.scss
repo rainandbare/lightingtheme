@@ -1,11 +1,8 @@
 header{
 	position: fixed;
-    width: 100%;
-    background-color: rgba(255,255,255,.85);	
+  width: 100%;
+  // background-color: rgba(255,255,255,.85);	
 	z-index: 10;
-	.midsize-social {
-		display: none;
-	}
 }
 .nav-innerWrapper{
 	width: 1080px;
@@ -18,30 +15,61 @@ header{
 	width: 100%;
 	justify-content: space-between;
 }
+.midsize-social{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #E8E8E8;
+  a{
+    color: black;
+  }
+  .social-menu {
+    padding: 0px 10px 3px;
+    a{
+      font-size: 11px;
+    }
+  }
+  .nav-utility-links{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    @include fontSize(8);
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    li{
+      padding: 5px 10px;
+    }
+  }
+}
+
 .nav-topBar{
 	max-width: $wrapperWidth;
 	margin: 0 auto;
 	justify-content: space-between;
 	height: 106px;
+  .fullscreen-nav, .nav-main-container{
+    background-color: rgba(256, 256, 256, 0.9)
+  }
 	.nav-utiity-container{
 		align-items: center;
 		text-transform: uppercase;
 		font-weight: bold;
 		letter-spacing: 1px;
 		justify-content: flex-end;
-		@include fontSize(8);
 		& > li{
 			padding: 10px;
 		}
-		.nav-utility-links{
-			display: flex;
-			flex-flow: row nowrap;
-			justify-content: space-around;
-			li{
-				padding: 5px 10px;
-			}
-		}
-
+	 h4{
+    padding-top: 0;
+   }
+   p.shipping-info{
+    font-size: 9px;
+    text-transform: initial;
+    /* font-weight: 700; */
+    font-style: italic;    
+   }
 	}
 	.nav-main-container{
 		align-items: stretch;
@@ -67,8 +95,6 @@ header{
     outline: none;
     cursor: pointer;
     background: transparent;
-    border-right: 1px solid $black;
-    border-left: 1px solid $black;
     transition: background 0.2s all;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -78,15 +104,18 @@ header{
 .nav-main-overalList > li{
    	display: flex;
 }
-
+div.simple-logo { 
+  width: 118px;
+  filter: grayscale(100%);
+  transition: all 0.5s ease;
+  &:hover{
+    filter: grayscale(0%);
+  }
+}
 .nav-main-overalList{
 	height: 100%;
 	li.nav-main-link a{
 		align-items: center;
-		div.simple-logo { 
-			width: 118px;
-			margin: 32px;
-		}
 	}
 }
 .innerWrapper{
@@ -101,7 +130,7 @@ header{
 
 .dropdown-content {
     display: none;
-    top: 106px;
+    top: 127px;
     position: absolute;
     z-index: -1;
     background-color: $white;
@@ -178,7 +207,8 @@ header{
 	min-width: 115px;
 	margin: 10px 35px;
 	display: flex;
-    align-items: center;
+  align-items: center;
+  padding-bottom: 0;
 }
 .logo-home-link{
 	align-items: center;

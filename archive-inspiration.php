@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 
-<main class="main-page archive-collections">
+<main class="main-page archive-projects ">
   <div class="container">
     <div class="collections-header">
-      <h1 class="page-title">Collections</h1>
-      <div id="sortCollections" class="wrapper-dropdown">
+      <h1 class="page-title">Inspirations</h1>
+      <!-- <div id="sortCollections" class="wrapper-dropdown">
         <span>Filter By: </span>
-        <ul class="dropdown">
+          <ul class="dropdown">
           <li class="option" id="all">All</li>
           <?php 
-            $taxonomy = 'collectiontypes';
+            $taxonomy = 'projecttypes';
             $terms = get_terms([
                 'taxonomy' => $taxonomy,
                 'hide_empty' => false,
@@ -18,13 +18,12 @@
               <li class="option sortTypes" id="<?php echo $term->slug; ?>"><?php echo $term->name; ?></li>
             <?php }; ?>
         </ul>
-      </div>
-    </div>
+      </div> -->
       <?php if (have_posts() ) : ?>
-          <section id="sortArticles" class="collection-wrapper">
+          <section id="sortArticles" class="projects-wrapper">
             <?php while ( have_posts() ) : the_post(); ?> 
               <? //get_template_part( 'templates/collections-archive', get_post_format() ); ?>
-              <? include(locate_template('templates/collections-archive.php')); ?>
+              <? include(locate_template('templates/projects-archive.php')); ?>
             <?php endwhile; ?> <!-- end of loop -->
           </section>
       <?php endif; ?>

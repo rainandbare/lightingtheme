@@ -1,4 +1,80 @@
 .archive-collections{
+	.collections-header{
+		width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-flow: column nowrap;
+		h1.page-title{
+			padding-bottom: 0;
+		}
+		.wrapper-dropdown {
+		    /* Size and position */
+		    position: relative; /* Enable absolute positioning for children and pseudo elements */
+		    align-self: flex-end;
+		    width: 200px;
+		    padding: 8px;
+		    margin-bottom: 20px;
+			
+
+		    /* Styles */
+		    outline: none;
+		    cursor: pointer;
+		    border: 1px solid black;
+
+		    /* Font settings */
+		    font-style: italic;
+		    @include fontSize(14);
+		    .dropdown{
+				/* Size & position */
+			    position: absolute;
+			    top: 100%;
+			    left: -1px; /* Size */
+			    right: -1px; /* Size */
+
+			    /* Styles */
+			    background: #fff;
+			    font-weight: normal; /* Overwrites previous font-weight: bold; */
+				border-left: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+
+			    /* Hiding */
+			    opacity: 0;
+			    pointer-events: none;
+				li{
+				    display: block;
+				    text-decoration: none;
+				    color: $grey;
+				    padding: 10px 20px;
+				}
+				li:hover{
+				    background: $lightGrey;
+				}
+			}
+		}
+		.wrapper-dropdown:after {
+		    content: "\f0d7";
+		    font-family: FontAwesome;
+		    font-style: initial;
+		    width: 0;
+		    height: 0;
+		    position: absolute;
+		    right: 23px;
+    		top: 11px;
+		}
+		/* Active state */
+		.wrapper-dropdown.active {
+			background: $lightGrey;
+			.dropdown {
+			    opacity: 1;
+			    pointer-events: auto;
+			}
+			&:after {
+				content: "\f0da";
+
+			}
+		}			
+	}
 	.collection-wrapper{
 		width: 1200px;
 		margin: 0 auto;
@@ -18,11 +94,21 @@
 			    height: 100%;
 		  	}
 		}
+		.archive-collection-single div.img{
+			width: 100%;
+			height: 300px;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
 		a.archive-collection-single.hide{
 			display: none;
 		}
 		.tallbox{
 			grid-row: span 2;
+		}
+		.widebox{
+			grid-column: span 2;
 		}
 	}
 }

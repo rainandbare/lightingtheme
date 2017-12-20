@@ -2,7 +2,7 @@
 
 <main class="main-page">
   <div class="container">
-      <h2>Press Releases</h2>
+      <h1 class="page-title">Press Releases</h1>
 
       <?php if (have_posts() ) : ?>
         <section class="basic-main no-sidebar">

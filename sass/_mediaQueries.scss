@@ -10,14 +10,13 @@
 		width: 35%;
 	}
 }
-@media (max-width: 1400px){
+@media (max-width: 1440px){
 	.innerWrapper{
 		padding: 40px 5%;
     	max-width: 1080px;
 	}
-	.footer-utilities-address  {
-		flex-flow: row wrap;
-		position: relative;
+	footer .footer-menu{
+		justify-content: center;
 	}
 
 }
@@ -33,6 +32,19 @@
 	main.main-page {
 	    padding-left: 30px;
 	    padding-right: 30px;
+	}
+	.blog main.main-page{
+		padding-left: 0px;
+	    padding-right: 0px;
+	}
+	.blog-article {
+    	width: 33.33%;
+	}
+	section.other-blog-articles .blog-article:last-child {
+	    display: block;
+	}
+	.basic-main.no-sidebar .basic-post{
+		width: calc(33.33% - 20px);
 	}
 }
 @media (max-width: 1135px){
@@ -82,19 +94,7 @@
 	.topBar-socialNav{
 		display: none;
 	}
-	header .midsize-social{
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		background: black;
-		.social-menu {
-			padding: 0px 10px 3px;
-			a{
-				font-size: 11px;
-				color: white;
-			}
-		}
-	}
+
 	// footer .footer-utilities-extras>* {
  //    	margin: 0px -5px 12px;
 	// }
@@ -217,12 +217,60 @@
 	.nav-main-overalList{
 		flex-flow: column nowrap;
 	}
+	.sidebar{
+		padding: 0px 0px 10px 15px;
+	}
+	.main-post article.post{
+		padding: 0 20px 0 10px;
+	}
+	.single-media article.post, .single-press-release article.post {
+   		margin: 0;
+	}
+	.blog-article {
+    	width: 50%;
+	}
+	.basic-main.no-sidebar .basic-post {
+    	width: calc( 50% - 20px);
+	}
 }
-
+@media (max-width: 767px){
+	footer .popup-window .popup-form .wpcf7-form .contactItem {
+    	width: 100%;
+	}
+	.main-post article.post, .sidebar{
+		width: 100%;
+		padding: 0 10px;
+	}
+	.recent-post-widget{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+	.sidebar ul.recent-post-widget li {
+	    width: calc(50% - 10px);
+	    margin: 20px 0px 0px;
+	}
+	.sidebar ul.recent-post-widget li:last-of-type{
+		display: none;
+	}
+}
 @media (max-width: 650px){
 	.blurb {
 	    top: 160px;
 	    width: 100%;
+	}
+	section.banner h2{
+		@include fontSize(22);
+	}
+	.blog-article {
+    	width: 100%;
+	}
+	.container{
+		padding: 32px 0px 25px;
+	}
+	.basic-main.no-sidebar .basic-post {
+    	width: calc( 50% - 10px);
+    	padding: 20px;
 	}
 }
 
@@ -254,10 +302,24 @@
 	footer .footer-utilities .HQLogoMobile{
 		display: flex;
 	}
-
-
+	footer .popup-window{
+		padding: 61px 14px;
+	}
+	.main-post{
+		padding-top: 60px;
+	}
+	.single-media article.post, .single-press-release article.post {
+   		padding: 0;
+	}
+	main.single-press-release{
+		padding: 0px 10px;
+	}
 }
-
+@media (max-width: 500px) {
+	.basic-main.no-sidebar .basic-post {
+    	width: 100%;
+	}
+}
 
 @media (max-width: 450px) {
 	.logo-top {
@@ -266,6 +328,26 @@
 	.mobile-menu-icon{
 		margin-right: 15px;
 		right: 0px;
+	}
+	footer .popup-window .popup-form{
+		padding: 45px 20px;
+	}
+	footer .popup-window .popup-form .popup-close{
+		right: 11px;
+    	top: 11px
+	}
+	footer .popup-window{
+		padding: 45px 0px 0px;
+	}
+
+	.sidebar ul.recent-post-widget li {
+	    width: 100%;
+	}
+	section.banner h2{
+		top: calc(30% - 30px);
+	}
+	section.intro p {
+		@include fontSize(12);
 	}
 }
 @media (max-width: 415px) {
@@ -281,5 +363,7 @@
 	.nav-topBar .nav-utiity-container {
 		padding: 10px 33px;
 	}
-
+	.main-post .post-nav-below p a{
+		@include fontSize(10);
+	}
 }

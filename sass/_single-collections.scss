@@ -1,32 +1,185 @@
 .single-collections{
-	.popup-form{
-		display: none;
-	}
-	h3{
-		font-size: 20px;
-		font-weight: 300;
-		text-transform: initial;
-	}
-	h6{
-		color: grey;
-		font-weight: 300;
-	}
-	h4{
-		text-align: left;
-	}
-	.variation img{
-		border-radius: 50%;
-		height: 50px;
-		width: 50px;
-	}
-	.see-more{
-		display: none;
-	}
-}
+  .single-collection-info, .single-project-info{
+  	h3{
+  	 @include fontSize(20);
+  		font-weight: 300;
+  		text-transform: initial;
+      padding-bottom: 15px;
+  	}
+  	h6{
+  		color:$grey;
+  		font-weight: 300;
+      text-transform: capitalize;
+  	}
+  	h4{
+      @include fontSize(16);
+      padding: 0;
+  		text-align: left;
+      text-transform: initial;
+      letter-spacing: 1px;
+  	}
+  }
+  .variations{
+    padding: 40px 0 55px;
 
+  }
+	.variation {
+    width: 65px;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    img{
+  		border-radius: 50%;
+  		height: 45px;
+  		width: 45px;
+      display: block;
+      margin: 0 auto;
+	   }
+    h6{
+        opacity: 0;
+        visibility: hidden;
+        background: $black;
+        color: white;
+        padding: 7px;
+        top: 55px;
+        margin: 0 auto;
+        border-radius: 5px;
+        text-align: center;
+        text-transform: lowercase;
+        position: absolute;
+        transition: all 0.2s ease;
+      }
+      h6:before{
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: calc(50% - 6px);
+        width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 8px solid black;
+        font-size: 0;
+        line-height: 0;
+      }
+  }
+  .variation:hover h6{
+    visibility: visible;
+    opacity: 1;
+  }
+  .toggledown{
+    padding-bottom: 10px;
+  }
+  .see-more{
+    display: none;
+    margin-left: 26px;
+  }
+	.see-more, .underInfo, .downloadLinks button{
+    color: $grey;
+    font-weight: 300;
+    letter-spacing: 1px;
+    @include fontSize(13);
+    padding: 10px 0px;
+    line-height: 1.6;
+	}
+  .underInfo a, .downloadLinks a, .downloadLinks button {
+    color: $grey;
+  }
+  .downloadLinks button{
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    outline: none;
+  }
+  a.inquire{
+    margin: 10px 0px;
+  }
+  .projects{
+    h2{
+      padding: 20px 0 0px;
+    }
+  }
+  #projectJSON{
+    display: none;
+  }
+  .project-thumbnails{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    li{
+        position: relative;
+        padding-top: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+    }
+    .overlay{
+      visibility: hidden;
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      background: rgba(256,256,256,0.5);
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    li:hover .overlay{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+.project-popup{
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  z-index: 10;
+  .slide{
+    height: 75vh;
+    margin: 7px;
+  }
+}
+.single-collection-info{
+  position: relative;
+  .send{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    a i{
+      font-size: 25px;
+      color: $darkGrey;
+      padding: 4px;
+    }
+  }
+}
 .single-collection-photos, .single-collection-info{
 	width: 50%;
 	padding: 40px 50px;
+}
+
+.single-collection-photos{
+  .collection-slider{
+    .slide{
+      height: 600px;
+    }
+  }
+  .slick-dots{
+    width: 100%;
+    text-align: center;
+    bottom: -10px;
+    left: initial;
+  }
 }
 
 .closed {
@@ -53,33 +206,56 @@
     opacity: 0;
   }
 }
-
+.circle-plus{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 0px 10px 0px 0px;
+}
 .circle-plus .circle {
     position: relative;
     width: 15px;
     height: 15px;
     border-radius: 100%;
-    border: solid 1px black;
+    border: solid 1px $mediumGrey;
 }
 .circle-plus .circle .horizontal {
     position: absolute;
-    background-color: black;
+    background-color: $mediumGrey;
     width: 9px;
     height: 1px;
     left: 50%;
-    top: 50%;
+    top: 55%;
     margin-left: -5px;
     margin-top: -1px;
 }
 .circle-plus .circle .vertical {
     position: absolute;
-    background-color: black;
+    background-color: $mediumGrey;
     width: 1px;
     height: 9px;
     left: 50%;
     margin-left: -1px;
-    top: 50%;
+    top: 55%;
     margin-top: -5px;
+}
+.suzettes_add_to_any{
+  padding-top: 10px;
+  justify-content: flex-end;
+  a span{
+    width: 25px !important;
+    height: 25px !important;
+    svg{
+      fill: $darkGrey;
+    }
+    &.phoneLimiter{
+      display: block;
+      width: 12px !important;
+      svg{
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 

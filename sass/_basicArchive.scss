@@ -22,6 +22,24 @@
 		box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.15);
 		display: flex;
 		flex-flow: row nowrap;
+		justify-content: center;
+		position: relative;
+
+		button{
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			top: 37%;
+			transform-origin: 50% 50% 0px;
+		    transform-style: flat;
+		    transition: all 0.4s ease-in-out;
+		    transform: translate(-100%, 0%) matrix3d(1, 0, 0, 0, -0.866025, 0.5, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+		}
+		div.img{
+			transition: all 0.3s ease-in-out;
+			transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.1, 0.999917);
+		    font-smoothing: antialiased;
+		}
 		article{
 			display: flex;
 			flex-flow: column nowrap;
@@ -34,6 +52,18 @@
 			font-weight: 300;
 			text-align: center;
 			@include fontSize(14);
+		}
+		&:hover div.img{
+			transform: matrix3d(0.655928, 0.0246515, 0.375577, -0.000925962, -0.0605271, 0.795328, 0.0615632, -0.000102605, -0.464358, -0.103425, 0.879588, -0.00146598, -21.4257, 4.13698, 4.81749, 0.991971);
+			transform-style: flat;
+    		transform-origin: 100% 50% 0px;
+		}
+		&:hover button{
+			visibility: inherit;
+		    opacity: 1;
+		    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.1, 0.999917);
+		    transform-origin: 50% 50% 0px;
+		    transform-style: flat;
 		}
 	}
 	a.hide{

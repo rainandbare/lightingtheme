@@ -3,6 +3,7 @@ footer{
 	background: $white;
 	ul#menu-main-footer-menu{
 		padding: 10px 0;
+		align-items: center;
 		li{
 			padding-right: 20px;
 			letter-spacing: 1px;
@@ -10,15 +11,16 @@ footer{
 		}
 	}
 	.madeWithLove{
+		justify-content: center;
+    	padding: 25px 0px;
 		text-transform: uppercase;
 		color: $accent;
 		letter-spacing: 1px;
 		align-items: center;
-		@include fontSize(12);
+		@include fontSize(16);
 		i{
 			padding: 0px 4px;
 		}
-
 	}
 	div.address{
 		padding: 0px 5px 5px 0px;
@@ -34,7 +36,7 @@ footer{
 		@include fontSize(9);
 	}
 	.footer-menu{
-		flex-flow: row nowrap;
+		flex-flow: row wrap;
 		justify-content: space-between;
 	}
 	.footer-utilities{
@@ -91,7 +93,7 @@ footer{
 		bottom: 0;
 		width: 100%;
 		left: 0;
-    	padding: 70px;
+    	padding: 70px 50px;
     	overflow-y: scroll;
 		background-color:RGBA(189, 189, 189, 0.7);
 		.popup-form{
@@ -104,19 +106,8 @@ footer{
 				text-align: center;
 			}
 			.popup-close{
-				position: absolute;
 				right: -11px;
 			    top: -11px;
-			    padding: 4px 6px 6px;
-			    width: 28px;
-				background-color: $black;
-				text-align: center;
-				outline: none;
-    			border: none;
-				border-radius: 50%;
-				i{
-					color: $white;
-				}
 			}
 			.wpcf7-form{
 				display: flex;

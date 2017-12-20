@@ -1,31 +1,31 @@
 <?php get_header(); ?>
 
-<main class="main-page">
+<main class="main-page archive-collections archive-projects">
   <div class="container">
-      <h2>Projects</h2>
-      <ul id="sortTypesList" class="flex">
-        <li><button class="sortTypes-button" id="all">All</button></li>
-        <?php 
-          $taxonomy = 'projecttypes';
-          $terms = get_terms([
-              'taxonomy' => $taxonomy,
-              'hide_empty' => false,
-          ]); 
-          foreach ($terms as $term) { ?>
-            <li><button class="sortTypes" id="<?php echo $term->slug; ?>"><?php echo $term->name; ?></button></li>
-          <?php }; ?>
-      </ul>
+    <div class="collections-header">
+      <h1 class="page-title">Projects</h1>
+      <div id="sortCollections" class="wrapper-dropdown">
+        <span>Filter By: </span>
+          <ul class="dropdown">
+          <li class="option" id="all">All</li>
+          <?php 
+            $taxonomy = 'projecttypes';
+            $terms = get_terms([
+                'taxonomy' => $taxonomy,
+                'hide_empty' => false,
+            ]); 
+            foreach ($terms as $term) { ?>
+              <li class="option sortTypes" id="<?php echo $term->slug; ?>"><?php echo $term->name; ?></li>
+            <?php }; ?>
+        </ul>
+      </div>
       <?php if (have_posts() ) : ?>
-        <section class="basic-main no-sidebar">
-          <section id="sortArticles" class="basic-archive">
+          <section id="sortArticles" class="projects-wrapper">
             <?php while ( have_posts() ) : the_post(); ?> 
               <? //get_template_part( 'templates/collections-archive', get_post_format() ); ?>
-              <? include(locate_template('templates/collections-archive.php')); ?>
+              <? include(locate_template('templates/projects-archive.php')); ?>
             <?php endwhile; ?> <!-- end of loop -->
-           <?php if (  $wp_query->max_num_pages > 1 ){ ?>
           </section>
-          <?php }?>   
-        </section>
       <?php endif; ?>
   </div>
 </main> <!-- /.main -->
