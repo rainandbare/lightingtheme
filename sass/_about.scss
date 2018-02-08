@@ -1,0 +1,49 @@
+main.main-about{
+	position: relative;
+	overflow-x: hidden;
+	h1{
+		width: 40%;
+	}
+
+	.about-heading{
+		width: 25%;
+		text-align: right;
+	}
+	.about-body{
+		width: 75%;
+	}
+	.about-body, .about-heading{
+		margin-top: 50px;
+	}
+	h4 {
+		//width: 60%;
+	    padding: 20px 0px 32px;
+	}
+	a.button{
+		position: relative;
+		top:-30px;
+	}
+	.about-content{
+		p{
+			padding-bottom: 25px;
+		}
+	}
+	padding-bottom: 80px;
+}
+.profileImageContainer img{
+	border: 8px solid #f4d022;
+    margin-bottom: 20px;
+    width: 300px;
+    margin-left: 30px;
+    float: right;
+}
+.colorBar{
+	width: 200%;
+	background-image: $gradientThick;
+	height: 650px;
+	position: absolute;
+	top: 13%;
+	left: -40%;
+	z-index: -1;
+	transform: rotate(25deg)
+}

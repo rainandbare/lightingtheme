@@ -1,0 +1,321 @@
+
+/*!
+* Theme Name: Viso Inc
+* Theme URI: http://visoinc.com
+* Description: Site Redesign for Viso Inc
+* Version: 1.0
+* Author: Suzette McCanny
+* Author URI: http://suzettemccany.com*/
+
+@import 'variables';
+@import 'fonts';
+@import 'normalize';
+@import 'typography';
+
+@import 'slick';
+@import 'slick-theme';
+
+@import 'home';
+@import 'header';
+@import 'footer';
+
+@import 'page';
+@import '404';
+@import 'search';
+
+
+@import 'blog';
+@import 'single';
+@import 'sidebar';
+
+@import 'contact';
+@import 'forms';
+
+@import 'basicArchive';
+@import 'archive-collections';
+@import 'single-collections';
+@import 'archive-projects';
+@import 'single-project';
+@import 'single-inspiration';
+
+@import 'print';
+
+// ====================================
+// Default Styling
+// ====================================
+// */
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
+@include placeholder {
+    color: black;
+    font-weight: 300;
+}
+
+::selection {
+  background: $lightGrey; /* WebKit/Blink Browsers */
+
+}
+::-moz-selection {
+  background: $lightGrey; /* Gecko Browsers */
+
+}
+
+.container {
+	width: 100%;
+	max-width: 1450px;
+	margin: 0px auto;
+	padding: 32px 25px 25px;
+}
+.full-width-container{
+	width: 100%;
+	padding: 32px 0px 25px;
+}
+.hf-container{
+	padding: 15px 25px 15px;
+	max-width: $wrapperWidth;
+	background: rgba(256, 256, 256, 0.9);
+}
+.home .hf-container{
+	padding: 0px 25px 15px;
+	margin: -20px 0 0 0;
+}
+.content {
+	float: left;
+	width: 65%;
+	margin-right: 5%;
+}
+
+img {
+	max-width: 100%;
+	line-height: 0;
+	display: block;
+}
+
+svg {
+	width: 100%;
+}
+
+
+.flex{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: stretch;
+}
+.third{
+	width: 33.333333%
+}
+
+header ul, footer ul{
+	list-style: none;
+}
+ .uppercase{
+    text-transform: uppercase;
+  }
+
+.oneline-form{
+	// max-width: 320px;
+	min-width: 137px;
+	@include fontSize(14);
+	input{
+		border: none;
+		outline: none;
+		padding: 7px;
+		border-radius: 0px;
+		background-color: $white;
+	}
+	input.search-field, input.mainInput{
+		font-style: italic;
+		font-weight: 300;
+		width: 80%;
+		@include placeholder();
+	}
+	input.search-field{
+		width: 100%;
+	}
+	input[type="submit"]{
+		width: 20%;
+		text-align: right;
+	}
+
+}
+.popup-close{
+	position: absolute;
+    right: 11px;
+    top: 11px;
+    padding: 4px 4px 4px;
+    width: 23px;
+    line-height: 1;
+    background-color: #000;
+    text-align: center;
+    outline: 0;
+    border: none;
+    border-radius: 50%;
+	i{
+		color: $white;
+	}
+}
+
+
+.et_divi_builder #et_builder_outer_content .et_pb_gutters3 .wide-columns .et_pb_column_1_3, .et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row .et_pb_column_1_3{
+	width: 31.666% !important;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_gutters3 .wide-columns .et_pb_column, .et_divi_builder #et_builder_outer_content .et_pb_gutters3.et_pb_row .et_pb_column{
+	margin-right: 2.5% !important;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_section:first-of-type {
+    padding: 15px 0 !important;
+}
+.et_divi_builder #et_builder_outer_content .et_pb_module a {
+    color: $accent !important;
+}
+#no-arrow .et_pb_more_button:after{
+    opacity: 0 !important;
+} 
+
+.st0{font-family:'Lato';}
+.st1{font-size:86.657px;}
+.st2{font-size:16px;}
+	
+.et_divi_builder #et_builder_outer_content .et_pb_code_inner{
+	.designProcess{
+		font-family: "Lato", sans-serif;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+	.designProcess .segment{
+		max-width: 120px;
+		width: 15%;
+	}
+	.designProcess .number{
+		font-size: 80px;
+		font-weight: 300;
+		text-align: center;
+		padding-bottom: 2px;
+		&:after{
+			content: '';
+			display: block;
+			background: black;
+			height: 1px;
+			width: 80%;
+			margin: 0 auto;
+		}
+	}
+	.designProcess h4{
+		padding-top: 10px;
+		font-size: 15px;
+    	letter-spacing: 0.5px;
+    	line-height: 1.2;
+		text-transform: uppercase;
+		font-weight: 300;
+		text-align: center;
+	}
+}
+
+.suzette-fullwidth .et_pb_fullwidth_header_container{
+	width: calc(100% - 120px) !important;
+	margin: 0 auto !important;
+}
+
+@media (max-width: 980px){
+	.et_divi_builder #et_builder_outer_content .et_pb_code_inner{
+		.designProcess .number{
+			font-size: 70px;
+		}
+		.designProcess h4{
+			font-size: 13px;
+			line-height: 1.3;
+		}
+		.designProcess .segment{
+			max-width: 110px;
+		}
+	}
+	.suzette-fullwidth .et_pb_fullwidth_header_container{
+		width: calc(100% - 40px) !important;
+		margin: 0 auto !important;
+	}
+}
+
+@media (max-width: 767px){
+	.et_divi_builder #et_builder_outer_content .et_pb_code_inner{
+		.designProcess .number{
+			font-size: 50px;
+		}
+		.designProcess h4{
+			font-size: 12px;
+		}
+		.designProcess .segment{
+			max-width: 100px;
+		}
+	}
+
+}
+
+@media (max-width: 600px){
+	.et_divi_builder #et_builder_outer_content .et_pb_code_inner{
+		.designProcess .number{
+			font-size: 30px;
+			&:after{
+				margin-top: 10px;
+			width: 60%;
+		}
+		}
+		.designProcess h4{
+			font-size: 10px;
+		}
+		.designProcess .segment{
+			max-width: initial;
+			width: 20%;
+		}
+	}
+}
+
+@media (max-width: 450px){
+	.et_divi_builder #et_builder_outer_content .et_pb_code_inner{
+		.designProcess .number{
+			font-size: 22px;
+			&:after{
+			margin-top: 6px;
+			width: 40px;
+		}
+		}
+		.designProcess h4{
+			font-size: 8px;
+		}
+		.designProcess .segment{
+			max-width: initial;
+			width: 19%;
+		}
+	}
+}
+
+.pum-open-overlay.pum-open-scrollable {
+	header{
+		width: calc(100% - 15px);
+	}
+	.nav-topBar, .midsize-social{
+		width: calc(100% + 15px);
+	}
+    margin-right: 17px; 
+}
+
+.pum-open-overlay.pum-open-scrollable body {
+    position: relative;
+}
+
+html.pum-open.pum-open-overlay.pum-open-scrollable body>[aria-hidden] {
+    padding-right: 0;
+}
+
+img#wpstats{ position:absolute; top:0; width:0px; height:0px; overflow:hidden }
+
+@import 'mediaQueries';
+
+
+

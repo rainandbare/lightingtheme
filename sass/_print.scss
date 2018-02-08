@@ -1,0 +1,110 @@
+@media print {
+	// body * {
+	// 	border: 1px solid red;
+	// }
+    main.main-page{
+    	// border: 2px solid blue;
+    	padding-top: 0px;
+	    min-height: auto;
+	    margin: 0;
+    }
+	.container{
+		 width: auto;
+		 // border: 2px solid green;
+		 margin: 0 !important;
+		 padding: 0 !important;
+		 float: none !important;
+	}
+	header, footer{
+		display: none;
+	}
+	.single-collection-title, .single-collection-info, .single-collection-photos, .single-collection-projects {
+    	float: none;
+    	width: 100%;
+    	padding: 0;
+    	margin: 0;
+	}
+	.print-header{
+		    display: block;
+		    float: right;
+	    img{
+	      width: 80px;
+	    }
+	    address{
+	     font-size: 11px;
+	     color: grey;
+	     padding-top: 10px;
+	    }
+	  }
+	  .productCodes{
+	  	display: block;
+	  }
+  	.print-title{
+  		float: left;
+  		width: 50%;
+  	}
+	.title-bar div.send, div.social-share, .single-collection-projects, div.circle, div.toggledown:nth-child(2), .single-collections a.inquire, ul.underInfo{
+		display: none;
+	}
+	section.details{
+		width: 70%;
+		float: left;
+		margin: 0;
+		padding: 0 20px 0 0;
+	}
+	.single-collections .see-more{
+		display: block !important;
+		margin-left: 0;
+	}
+	.single-collections .variations{
+		display: block;
+		margin-top: 20px;
+		flex-flow: column nowrap !important;
+		width: 30%;
+		float: right;
+	}
+	.single-collections .variation {
+		flex-flow: row nowrap;
+		opacity: 1;
+		width: 100%;
+		h6 {
+	    	opacity: 1;
+	    	visibility: visible;
+	    	background: #fff;
+	    	color: grey;
+	    	text-align: left;
+	    	width: 100%;
+	    	&:before{
+	    		display: none;
+	    	}
+		}
+	}
+	.single-collection-photos{
+		width: 100%;
+		float: none;
+	}
+	.print-gallery{
+		padding-top: 30px;
+  		display: block;
+  		img{
+  			width: calc(20% - 10px);
+  			margin: 0 10px 10px 0;
+  			float: left;
+  		}
+	}
+	.print-gallery:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	.images{
+		display: none;
+	}
+	img {
+		display: block;
+	    page-break-before: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+	    page-break-after: auto; /* 'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+	    page-break-inside: avoid; /* or 'auto' */
+	}
+
+}

@@ -1,0 +1,190 @@
+	.contactSubmit{
+		padding-top: 20px !important;
+		width: 100%;
+	}
+	div.wpcf7-response-output{
+		border: none !important;
+		display: block;
+	    font-weight: 300;
+	    letter-spacing: 1px;
+	    font-style: italic;
+	    margin: 0;
+	    padding: 0;
+	}
+	div.wpcf7-mail-sent-ok{
+		border: none !important;
+		display: block;
+	    font-weight: 300;
+	    letter-spacing: 1px;
+	    font-style: italic;
+	}
+.pum-theme-newsletter-popup .pum-container{
+	background-image: url('./img/No-Name.png');
+    background-position: 290% 33%;
+    padding-left: 25% !important;
+    background-repeat: no-repeat;
+    background-size: 109%;
+	.pum-title{
+		font-weight: 300;
+		letter-spacing: 1px;
+		padding: 60px 30% 30px 0;
+    	line-height: 1.7;
+	}
+	.wpcf7{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+	.contactItem{
+		width: calc(50% - 10px);
+		margin-bottom: 10px;
+	}
+	input.wpcf7-text, textarea.wpcf7-textarea {
+		background-color: white !important;
+		color: black !important;
+		font-weight: 300 !important;
+	}
+	// .contactSubmit{
+	// 	width: 100%;
+	// }
+}
+.pum-theme-newsletter-popup .pum-container, .pum-theme-lightbox .pum-container{
+	input.wpcf7-submit{
+		background: black;
+		color: white !important;
+		border-radius: 0px;
+		border: 1px solid transparent !important;
+		padding: 10px 12px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		transition: all 0.4s ease;
+		display: inline-block;
+		min-width: 115px;
+		max-width: 300px;
+		font-weight: 700;
+		text-align: center;
+		outline: none;
+		@include fontSize(12);
+		&:hover{
+			color: black !important;
+			border: 1px solid black !important;
+			background: white !important;
+		}
+	}
+	.contactSubmit{
+		text-align: right;
+		padding: 20px 0 0px;
+	}
+}
+
+.pum-title {
+	@include fontSize(18)
+	font-family: $sans;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.pum-content{
+	.wpcf7-form{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		.contactItem{
+			width: calc(50% - 20px);
+			label{
+				display: none;
+			}
+			&:nth-child(14){
+				width: 100%;
+			}
+		}
+		p{	
+			padding-top: 20px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+html.pum-open.pum-open-overlay, html.pum-open.pum-open-overlay.pum-open-fixed .pum-overlay {
+   overflow: hidden!important;
+}
+html.pum-open.pum-open-overlay, html.pum-open.pum-open-overlay.pum-open-fixed .pum-overlay {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+html.pum-open.pum-open-overlay.pum-open-scrollable .pum-overlay.pum-active {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.recaptcha{
+	padding-top: 20px;
+	width: 100%;
+}
+#tradecontactform{
+	.wpcf7-captchar, .wpcf7-select, .wpcf7-text, .wpcf7-textarea{
+		padding: 18px 13px !important;
+	}
+	.wpcf7-select {
+    	height: 52px;
+    	margin-bottom: 0;
+	}
+	.wpcf7-form{
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		span.hide { display: none; }
+		p{
+			width: calc(50% - 1.5%);
+			padding-bottom: 20px;
+		}
+		p.full-width{
+			width: 100%;
+		}
+		p.conditional{
+			display: none;
+		}
+		.checkboxes{
+		 	.wpcf7-list-item{
+		 		display: flex;
+		 		flex-flow: row nowrap;
+		 		align-items: center;
+		 	}
+		 	span{
+				width: initial;
+				input{
+					width: initial;
+					margin-right: 3px;
+
+				}
+			}
+			.wpcf7-list-item{
+				padding-right: 10px;
+			}
+			
+		}
+		input.wpcf7-submit{
+			background: black;
+			color: white !important;
+			border-radius: 0px;
+			border: 1px solid transparent !important;
+			padding: 10px 12px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			transition: all 0.4s ease;
+			display: inline-block;
+			min-width: 115px;
+			max-width: 300px;
+			font-weight: 700;
+			text-align: center;
+			outline: none;
+			@include fontSize(12);
+			&:hover{
+				color: black !important;
+				border: 1px solid black !important;
+				background: white !important;
+			}
+		}
+	}
+}

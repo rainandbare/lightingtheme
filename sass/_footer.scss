@@ -1,0 +1,162 @@
+
+footer{
+	section.footer-main{
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	background: $white;
+	ul#menu-main-footer-menu{
+		padding: 10px 0;
+		align-items: center;
+		li{
+			padding-right: 20px;
+			letter-spacing: 1px;
+			@include fontSize(14);
+		}
+	}
+	ul#menu-main-footer-menu li:last-child{
+			padding: 0;
+		}
+	.madeWithLove{
+		justify-content: center;
+    	padding: 5px 0px 25px;
+		text-transform: uppercase;
+		color: $accent;
+		letter-spacing: 1px;
+		align-items: center;
+		@include fontSize(16);
+		i{
+			padding: 0px 4px;
+		}
+	}
+	div.address{
+		padding: 0px 5px 5px 0px;
+	}
+	address, div.contact{
+		@include fontSize(10);
+		font-style: normal;
+		padding: 0 10px 0 0;
+	}
+	h6{
+		text-transform: uppercase;
+		color: $accent;
+		@include fontSize(9);
+	}
+	.footer-menu{
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+	.footer-utilities{
+		padding: 10px 0px 5px;
+		justify-content: space-between;
+		.HQLogoMobile, .HQLogo{
+			display: flex;
+			flex-flow: column nowrap;
+			margin: 10px 10px 0 0;
+			i{
+				color: $accent;
+			}
+		}
+		.HQLogoMobile{
+			display: none;
+		}
+	}
+	.footer-utilities-extras{
+		align-items: center;
+		& > *{
+			margin: 10px 0px 10px 10px;
+
+		}
+		.catalogue-links button{
+			margin: 0 5px;
+		}
+		.newsletter{
+			margin: 0px 0 0 1px;
+		}
+		.oneline-form input.mainInput{
+			font-style: italic;
+			min-width: 189px;
+		}
+	} 
+	.social-menu{
+		display: flex;
+	}
+	.catalogue-links{
+		flex-flow: row nowrap;
+		align-items: center;
+	}
+	.midsized-footer{
+		display: none;
+	}
+	.HQLogo {
+		text-align: center;
+	}
+	.popup-window{
+		display: none;
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		left: 0;
+    	padding: 70px 50px;
+    	overflow-y: scroll;
+		background-color:RGBA(189, 189, 189, 0.7);
+		.popup-form{
+			background-color: white;
+			padding: 30px 40px;
+			max-width: 800px;
+			margin: 0 auto;	
+			position: relative;
+			h3{
+				text-align: center;
+			}
+			.popup-close{
+				right: -11px;
+			    top: -11px;
+			}
+			.wpcf7-form{
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: space-between;
+				.contactItem{
+					width: calc(50% - 20px);
+					label{
+						display: none;
+					}
+					&:nth-child(14){
+						width: 100%;
+					}
+				}
+				p{	
+					padding-top: 20px;
+					width: 100%;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+footer .hf-container{
+	padding: 15px 25px 30px;
+}
+.sub-footer{
+	ul{
+		justify-content: flex-start;
+	}
+	li{
+		@include fontSize(8);
+		padding: 0 10px 5px 0px;
+		a{
+			color: $mediumGrey;
+			&:hover{
+				color: $grey;
+			}
+		}
+	}
+}
+
+
+
+

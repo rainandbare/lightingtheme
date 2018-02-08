@@ -1,0 +1,31 @@
+.searchform{
+	border: 1px solid $black;
+	padding: 1px;
+	background: white;
+}
+
+main.search{
+	h1.title{
+		font-weight: 300;
+		padding-bottom: 20px;
+	}
+	p{
+		padding: 10px 0px 15px;
+	}
+	h4{
+		@include fontSize(12);
+		padding-top: 0px;
+	}
+}
+.search-results-collection{
+	min-height: calc(100vh - 370px);
+	display: flex;
+	flex-flow: row wrap;
+	border-top: 1px solid black;
+	margin-top: 40px;
+	
+}
+
+.search-again{
+	max-width: 800px;
+}

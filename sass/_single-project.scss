@@ -1,0 +1,83 @@
+.back-button{
+	padding-top: 10px;
+	display: inline-block;
+	h6{
+		color: $grey;
+	    font-weight: 300;
+	    text-transform: capitalize;
+	}
+	&:hover{
+		h6{
+			color: black;
+		}
+	}
+}
+.project-slider{
+	.slide{
+		margin: 5px;
+		height: 75vh;
+	}
+	.slick-next:before, .slick-prev:before{
+    opacity: 1;
+  }
+  .slick-next:hover:before, .slick-prev:hover:before{
+    color: black;
+  }
+}
+.credits, .project-credits{
+	padding: 10px 0px 5px;
+	justify-content: space-between;
+	li{
+		padding-right: 20px;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: flex-end;
+	}
+	h5{
+		text-transform: capitalize;
+	}
+	h6{
+		color: $grey;
+	    font-weight: 300;
+	    text-transform: capitalize;
+	}
+
+	.suzettes_add_to_any{
+		padding-top: 0;
+		margin: 0;
+	}
+}
+
+.controls{
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	h6.count{
+		padding-right: 10px;
+		padding-bottom: 0px !important;
+	}
+}
+.project-slider-under2{
+	// width: 50%;
+	margin: 0 auto;
+	.slide{
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.slick-dots{
+		position: static;
+    	text-align: center;
+	}
+	.slick-next:before, .slick-prev:before{
+		opacity: 1;
+	}
+	div.mobile-photo{display: none;}
+}
+.below-images{
+	justify-content: space-between;
+	.social-share.projects{
+		display: none;
+	}
+}
+

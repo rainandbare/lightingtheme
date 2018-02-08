@@ -1,0 +1,11 @@
+.not-found{
+	min-height: calc(100vh - 290px);
+	padding-top: 30px;
+	h2{
+	 @include fontSize(180);
+	 color: $lightGrey;
+	}
+	p{
+		padding: 10px 0px;
+	}
+}
